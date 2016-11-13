@@ -18,6 +18,9 @@ def quiz():
     q2()
     q3()
     q4()
+    q5()
+    q6()
+    q7()
 
     print("water =", wscore)
     print("fire =", fscore)
@@ -96,6 +99,69 @@ def q4():
     print("D: The leader")
     answer = input("Pick your answer: ")
     if answer.lower() == "a":
+        wscore += 10
+    elif answer.lower() == "d":
+        fscore += 10
+    elif answer.lower() == "b":
+        escore += 10
+    else:
+        ascore += 10
+
+def q5():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 5 - Which mythical creature is your favourite?")
+    print("A: Phoenix")
+    print("B: Pegasus")
+    print("C: Merpeople")
+    print("D: Centaur")
+    answer = input("Pick your answer: ")
+    if answer.lower() == "c":
+        wscore += 10
+    elif answer.lower() == "a":
+        fscore += 10
+    elif answer.lower() == "d":
+        escore += 10
+    else:
+        ascore += 10
+
+def q6():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 6 - Which power do you most want?")
+    print("A: The ability to fly")
+    print("B: Fire protection")
+    print("C: Underwater breathing")
+    print("D: Earth manipulation")
+
+def q7():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 7 - You have £1 million. How do you use it?")
+    print("A: Save it")
+    print("B: Spend it")
+    print("C: Give it to charity")
+    print("D: Give it to others")
+    answer = input("Pick your answer: ") 
+    if answer.lower() == "d":
+        wscore += 10
+    elif answer.lower() == "b":
+        fscore += 10
+    elif answer.lower() == "a":
+        escore += 10
+    else:
+        ascore += 10
+
+def q8():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 8 - What type of secret base would you have?")
+    print("A: A sky base")
+    print("B: An underground base")
+    print("C: An underwater base")
+    print("D: A volcano base")
+    answer = input("Pick your answer: ")
+    if answer.lower() == "c":
         wscore += 10
     elif answer.lower() == "d":
         fscore += 10
