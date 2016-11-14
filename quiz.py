@@ -21,11 +21,14 @@ def quiz():
     q5()
     q6()
     q7()
+    q8()
+    q9()
+    q10()
 
-    print("water =", wscore)
-    print("fire =", fscore)
-    print("earth =", escore)
-    print("air =", ascore)
+    print("water =", wscore, "%")
+    print("fire =", fscore, "%")
+    print("earth =", escore, "%")
+    print("air =", ascore, "%")
 
 def q1():
     global wscore, fscore, escore, ascore
@@ -96,7 +99,7 @@ def q4():
     print("A: The brains?")
     print("B: The brawn?")
     print("C: The speed?")
-    print("D: The leader")
+    print("D: The leader?")
     answer = input("Pick your answer: ")
     if answer.lower() == "a":
         wscore += 10
@@ -106,7 +109,6 @@ def q4():
         escore += 10
     else:
         ascore += 10
-
 def q5():
     global wscore, fscore, escore, ascore
     global name
@@ -124,7 +126,6 @@ def q5():
         escore += 10
     else:
         ascore += 10
-
 def q6():
     global wscore, fscore, escore, ascore
     global name
@@ -133,7 +134,6 @@ def q6():
     print("B: Fire protection")
     print("C: Underwater breathing")
     print("D: Earth manipulation")
-
 def q7():
     global wscore, fscore, escore, ascore
     global name
@@ -151,7 +151,6 @@ def q7():
         escore += 10
     else:
         ascore += 10
-
 def q8():
     global wscore, fscore, escore, ascore
     global name
@@ -169,7 +168,44 @@ def q8():
         escore += 10
     else:
         ascore += 10
-    
+def q9():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 9 - Of these eight, what is your favourite food?")
+    print("A: Tacos")
+    print("B: Vegetables")
+    print("C: I prefer water")
+    print("D: Chicken")
+    print("E: Beef or pork")
+    print("F: Soup")
+    print("G: Pizza")
+    print("H: Eggs")
+    answer = input("Pick your answer: ")
+    if answer.lower() == "c" or answer.lower() == "f":
+        wscore += 10
+    elif answer.lower() == "a" or answer.lower() == "g":
+        fscore += 10
+    elif answer.lower() == "b" or answer.lower() == "e":
+        escore += 10
+    else:
+        ascore += 10
+def q10():
+    global wscore, fscore, escore, ascore
+    global name
+    print("Question 10 - Finally, what would be your fighting tactic?")
+    print("A: Overpower the enemy")
+    print("B: Solid defence")
+    print("C: Evasive manoeuvres")
+    print("D: Aim for the vital organs")
+    answer = input("Pick your answer: ")
+    if answer.lower() == "d":
+        wscore += 10
+    elif answer.lower() == "a":
+        fscore += 10
+    elif answer.lower() == "b":
+        escore += 10
+    else:
+        ascore += 10
 
 
 
