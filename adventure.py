@@ -5,10 +5,12 @@ def player_name():
     global name
     name = input("Please enter your name. It may affect your future: ")
     scene1()
+
+    
 def scene1():
     global name
     print("You recieve a call.")
-    print("You have been asked to do one of the most complicaed jobs ever requested of you")
+    print("You have been asked to do one of the most complicated jobs ever requested of you")
     print("Do you accept the job?")
     answer = input("Yes or no?: ")
     if answer.lower() == "yes":
@@ -26,6 +28,8 @@ def scene1():
     else:
         print("Answer not recognised.")
         scene1()
+
+        
 def scene2():
     global name
     print("You accepted the job")
@@ -41,9 +45,11 @@ def scene2():
     else:
         print("Answer not recognised")
         scene2()
+
+        
 def scene3a():
     global name
-    print("""The teleporter took no time at all. 'I bet you're glad you went through there' you hear.
+    print("""The teleporter took no time at all. 'I bet you're glad you went through there,""", name,"""' you hear, before hearing the portal close.
     You aren't alone. Your old friend was coming along for the ride, one you had not seen since your last mission.
     There had been ups and downs, but considering your friend was a turned robot, you feel a little concern for your friend.""")
     print("Do you...")
@@ -57,6 +63,8 @@ def scene3a():
     else:
         print("Answer not recognised")
         scene3a()
+
+        
 def scene3b():
     global name
     print("""You choose not to go through the portal. You'd had enough issues with them in the past.
@@ -73,6 +81,8 @@ def scene3b():
     else:
         print("Answer not recognised")
         scene3b()
+
+        
 def scene4a():
     global name
     print("""You can't bare to see the digital face on your friend droop, so you let them join you,
@@ -91,19 +101,39 @@ def scene4a():
     elif choice.lower() == "disguise":
         print("""You stroll into the building looking 'very robot-like'.
     The robots notice you. You get multiple rounds shot into your stomach.
-    Clearly they know their friends. The end.""")
+    Clearly they know their enemies. The end.""")
         player_name()
     elif choice.lower() == "secret":
         scene5b()
     else:
         print("Answer not recognised")
         scene4a()
+
+        
 def scene4b():
     global name
-    print("hi", name, ". this is scene 4b. it's not completed yet")
+    print("""As much as you want to have a companion for this mission,
+    risking your friend's life isn't worth it. You tell your friend that you'll be fine.
+    Their face drops, but you give them some oil and start your journey.""")
+    print("You reach the building. How will you get in?")
+    answer = input("Roof or side?: ")
+    if answer.lower() == "roof":
+        scene5c()
+    elif answer.lower() == "side":
+        scene5d()
+    else:
+        print("Answer not recognised")
+        scene4b()
+
+    
 def scene4c():
     global name
-    print("hi", name, ". this is scene 4c. it's not completed yet")
+    print("""You get in the car and use satellite navigation to find where you need to be.
+    It takes 4 hours to get there. It's not worth it. You get back out of the car and head back to the portal.
+    You dive through just as it begins to close""")
+    scene3a()
+
+    
 def scene5a():
     global name
     random = randint(0, 1)
@@ -118,28 +148,70 @@ def scene5a():
         else:
             print("Answer not recognised")
             scene5a()
-    elif random == 1:
+    else:
         print("You burst through the doors, running past the shooting bots.")
         print("You make it into the corridor, the alarms blaring loud")
-    else:
-        print("Answer not recognised")
-        scene4a()
+        print("There are 2 doors in this corridor. Do you go...")
+        choice = input("Left or right?: ")
+        if choice.lower() == "left":
+            scene6c()
+        elif choice.lower() == "right":
+            scene6d()
+        else:
+            print("Answer not recognised")
+            scene5a()
+
+        
 def scene5b():
     global name
     print("hi", name, ". this is scene 5b. it's not completed yet")
+
+    
+def scene5b():
+    global name
+    print("hi", name, ". this is scene 5b. it's not completed yet")
+
+
+def scene5b():
+    global name
+    print("hi", name, ". this is scene 5b. it's not completed yet")
+    
+    
 def scene6a():
     global name
     print("You dive out of the way, just in time to watch the rockets explode behind you. You see a door.")
     print("Do you make a run for it, or do you stand and fight?")
     choice = input("Run or fight?: ")
-    if choice == "run":
+    if choice.lower() == "run":
         scene7a()
+    elif choice.lower() == "fight":
+        scene7b()
+
+        
 def scene6b():
     global name
     print("hi", name, ". this is scene 6b. it's not completed yet")
+
+    
+def scene6c():
+    global name
+    print("hi", name, ". this is scene 6c. it's not completed yet")
+
+    
+def scene6d():
+    global name
+    print("hi", name, ". this is scene 6d. it's not completed yet")
+
+    
 def scene7a():
     global name
     print("hi", name, ". this is scene 7a. it's not completed yet")
+
+
+def scene7b():
+    global name
+    print("hi", name, ". this is scene 7b. it's not completed yet")
+    
     
 
 
