@@ -99,7 +99,7 @@ def scene4a():
     if choice.lower() == "loud":
         scene5a()
     elif choice.lower() == "disguise":
-        print("""You stroll into the building looking 'very robot-like'.
+        print("""You stroll into the building, you and your friend looking 'very robot-like'.
     The robots notice you. You get multiple rounds shot into your stomach.
     Clearly they know their enemies. The end.""")
         player_name()
@@ -164,17 +164,41 @@ def scene5a():
         
 def scene5b():
     global name
-    print("hi", name, ". this is scene 5b. it's not completed yet")
+    print("""The two of you go around the back, where you are greeted with a ladder and a door.
+    Where do you want to go? Up the ladder, or through the door?""")
+    choice = input("Ladder or door?: ")
+    if choice.lower() == "ladder":
+        scene6e()
+    elif choice.lower() == "door":
+        scene6f()
+    else:
+        print("Answer not recognised")
+        scene5b()
 
     
-def scene5b():
+def scene5c():
     global name
-    print("hi", name, ". this is scene 5b. it's not completed yet")
+    print("""You climb up a ladder onto the roof. It is guarded by one solitary robot.
+    You hide behind a crate, with several things at your disposal. There is a penny, a syringe gun and a whistle.
+    Which do you use?""")
+    choice = input("Penny, syringe or whistle?: ")
+    if choice == "penny":
+        scene6g()
+    elif choice == "syringe":
+        print("""You fire at the robot, before realising something. Robots aren't affected by syringes.
+    Hey, no matter. You missed anyway, and the syringe is coming right back to you. Sleep tight""")
+        scene5c()
+    elif choice == "whistle":
+        print("You blow the whistle. Nothing happens. No, wait! You hear a noise approaching you. Hello Robot Guard!")
+        scene5c()
+    else:
+        print("Answer not recognised")
+        scene5c()
 
 
-def scene5b():
+def scene5d():
     global name
-    print("hi", name, ". this is scene 5b. it's not completed yet")
+    print("You walk towards the door")
     
     
 def scene6a():
@@ -201,6 +225,18 @@ def scene6c():
 def scene6d():
     global name
     print("hi", name, ". this is scene 6d. it's not completed yet")
+
+def scene6e():
+    global name
+    print("hi", name, ". this is scene 6e. it's not completed yet")
+
+def scene6f():
+    global name
+    print("hi", name, ". this is scene 6f. it's not completed yet")
+
+def scene6g():
+    global name
+    print("hi", name, ". this is scene 6g. it's not completed yet")
 
     
 def scene7a():
