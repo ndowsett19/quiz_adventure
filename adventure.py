@@ -26,7 +26,7 @@ def scene1():
             print("Answer not recognised.")
             scene1()
     else:
-        print("Answer not recognised.")
+        fail_ans()
         scene1()
 
         
@@ -43,7 +43,7 @@ def scene2():
     elif choice.lower() == "no":
         scene3b()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene2()
 
         
@@ -61,7 +61,7 @@ def scene3a():
     elif reply.lower() == "leave":
         scene4b()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene3a()
 
         
@@ -79,7 +79,7 @@ def scene3b():
     elif choice.lower() == "car":
         scene4c()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene3b()
 
         
@@ -106,7 +106,7 @@ def scene4a():
     elif choice.lower() == "secret":
         scene5b()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene4a()
 
         
@@ -146,7 +146,7 @@ def scene5a():
         elif choice.lower() == "stay":
             scene6b()
         else:
-            print("Answer not recognised")
+            fail_ans()
             scene5a()
     else:
         print("You burst through the doors, running past the shooting bots.")
@@ -158,7 +158,7 @@ def scene5a():
         elif choice.lower() == "right":
             scene6d()
         else:
-            print("Answer not recognised")
+            fail_ans()
             scene5a()
 
         
@@ -172,7 +172,7 @@ def scene5b():
     elif choice.lower() == "door":
         scene6f()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene5b()
 
     
@@ -182,74 +182,196 @@ def scene5c():
     You hide behind a crate, with several things at your disposal. There is a penny, a syringe gun and a whistle.
     Which do you use?""")
     choice = input("Penny, syringe or whistle?: ")
-    if choice == "penny":
+    if choice.lower() == "penny":
         scene6g()
-    elif choice == "syringe":
+    elif choice.lower() == "syringe":
         print("""You fire at the robot, before realising something. Robots aren't affected by syringes.
     Hey, no matter. You missed anyway, and the syringe is coming right back to you. Sleep tight""")
         scene5c()
-    elif choice == "whistle":
+    elif choice.lower() == "whistle":
         print("You blow the whistle. Nothing happens. No, wait! You hear a noise approaching you. Hello Robot Guard!")
         scene5c()
     else:
-        print("Answer not recognised")
+        fail_ans()
         scene5c()
 
 
 def scene5d():
     global name
-    print("You walk towards the door")
+    print("You walk towards the door, instantly recognising the code lock to the side.")
+    print("Do you take the roof, or decode the door?")
+    choice = input("Roof or decode?: ")
+    if choice.lower() == "roof":
+        scene5c()
+    elif choice.lower() == "decode":
+        scene6h()
+    else:
+        fail_ans()
+        scene5d()
     
     
 def scene6a():
     global name
-    print("You dive out of the way, just in time to watch the rockets explode behind you. You see a door.")
+    print("You dive out of the way, just in time to watch the rockets explode behind you. Your friend took the hit. You see a door.")
     print("Do you make a run for it, or do you stand and fight?")
     choice = input("Run or fight?: ")
     if choice.lower() == "run":
         scene7a()
     elif choice.lower() == "fight":
         scene7b()
+    else:
+        fail_ans()
+        scene6a()
 
         
 def scene6b():
     global name
-    print("hi", name, ". this is scene 6b. it's not completed yet")
+    print("""You stand your ground, staring at the missiles. You like to face things head on, despite danger.
+    Your friend leaps in front of you, stopping the missiles in their tracks before they exploded. You knew it was a mistake to take them with you.
+    Mourning your friend results in being fired at again. You fall on the floor, on top of your friend. Game Over.""")
 
     
 def scene6c():
     global name
-    print("hi", name, ". this is scene 6c. it's not completed yet")
-
+    print("You run towards the left door and slam it behind you.")
+    if name.lower() == "wally":
+        print("Despite all efforts to save it, the wireless mouse drops to the ground and shatters. Game Over.")
+        player_name()
+    elif name.lower() == "noah":
+        print("You are faced with an AI, clearly controlling the robots. Do you barter or fight?")
+        choice = input("Barter or fight?: ")
+        if choice.lower == "barter":
+            scene7c()
+        elif choice.lower == "fight":
+            scene7d()
+        else:
+            fail_ans()
+            scene6c()
+    elif name.lower() == "alex":
+        print("""Seeing such an empty room fills you with determination. You step back outside and destroy the robots.
+    hiding in one of the robots, you walk towards the CORE, where you shut off the power and save the world.""")
+        goodending()
+    elif name.lower() == "andrew" or name.lower() == "chazza":
+        print("I am afraid continuing shall cause the death of many people, and proceeding could lead to the destruction of planet Earth.")
+        choice = input("Proceed or leave?: ")
+        if choice.lower() == "proceed":
+              print("You step forward. You've killed us all. The world disintegrates in a flash of dust. Why would you do this? You monster.")
+              badending()
+        elif choice.lower() == "leave":
+            print("""You made the right choice. Literally.
+                  You leave the left room because it had to be left behind and enter the right room as it is the right choice.""")
+            scene6d()
+        else:
+            fail_ans()
+            scene6c()
     
 def scene6d():
     global name
-    print("hi", name, ". this is scene 6d. it's not completed yet")
+    print("""You enter the right room, and carefully shut the door behind you. A voice startles you.
+    "Do you really want to kill us all? After all, without us, you wouldn't be here. We want your help in ruling the world, but we knew you wuold not accept from a simple question,
+    so now, we aren't giving you a choice." You had been used. Your friend had too. You feel a pang of guilt inside you. They had died for no reason.""")
+    choice = input("Do you accept the offer? Yes or no?: ")
+    if choice.lower()  == "yes":
+        scene7e()
+    elif choice.lower() == "no":
+        scene7f()
+    else:
+        fail_ans()
+        scene6d()
 
 def scene6e():
     global name
-    print("hi", name, ". this is scene 6e. it's not completed yet")
+    print("""You and your friend take the ladder up to the roof. You find a two robot guards
+    Do you fight them?""")
+    choice = input("Yes or no?: ")
+    if choice.lower() == "yes":
 
 def scene6f():
     global name
-    print("hi", name, ". this is scene 6f. it's not completed yet")
+    print("""You find a locked door, but your friend is already decoding the password.
+    The door swings open shortly after, revealing 3 chutes. Which do you go down?""")
+    choice = input("Left, middle or right?: ")
+    if choice.lower() == "left":
+        print("You fell into a trash compactor. You are squashed to death. Game over")
+    elif choice.lower() == "middle":
+        scene7g()
+    elif choice.lower() == "right":
+        print("You go down a chute that leads to a storage room. There is a cake. You try and eat it. The cake is a lie. Game Over")
+    else:
+        fail_ans()
+        scene6f()
 
 def scene6g():
     global name
-    print("hi", name, ". this is scene 6g. it's not completed yet")
+    random = randint(0, 1)
+    if random == 0:
+        print("""You pick up a penny and throw it next to the robot. The robot bends down, says "Ooh, a penny" and reaches to pick it up.
+    All the while, you sprint to the vent and slide down.""")
+    elif random == 1:
+        print("You run, expecting it to reach down, but it spots you and shoots you off the roof. Game over")
+    
 
+def scene6h():
+    global name
+    print("""You try and fail to hack the mainframe. Little did you know, alarms had been set off.
+    You are surrounded. You have no escape and the door is not budging. You take a bullet to every possible bodily place.
+    Ouch. Game Over.""")
+    player_name()
     
 def scene7a():
     global name
-    print("hi", name, ". this is scene 7a. it's not completed yet")
-
+    print("Running, you reach a door.")
 
 def scene7b():
     global name
     print("hi", name, ". this is scene 7b. it's not completed yet")
-    
-    
 
+def scene7c():
+    global name
+    print("hi", name, ". this is scene 7c. it's not completed yet")
+
+def scene7d():
+    global name
+    print("hi", name, ". this is scene 7d. it's not completed yet")
+
+def scene7e():
+    global name
+    print("You take over the world together, having good times, without any regrets")
+    print("\n"*20)
+    print("Then you get stabbed in the back. The end")
+    badending()
+
+def scene7f():
+    global name
+    print("hi", name, ". this is scene 7f. it's not completed yet")
+
+def scene7g():
+    global name
+    print("hi", name, ". this is scene 7g. it's not completed yet")
+
+def goodending():
+    global name
+    print("Congratulation", name, "! You have completed one of many endings. Would you like to try and get them?")
+    answer = input("Yes or no?: ")
+    if answer.lower() == "yes":
+        player_name()
+    else:
+        quit()
+
+def badending():
+    global name
+    print("Sucks to be you. You failed. Unlucky.")
+    print("\n"*10)
+    print("But this is an ending, so we'll call it the bad one.")
+    answer = input("Try again? Yes or no?: ")
+    if answer.lower() == "yes":
+        player_name()
+    else:
+        quit()
+
+def fail_ans():
+    global name
+    print("Answer not recognised")
 
 
 
