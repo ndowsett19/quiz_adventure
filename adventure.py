@@ -3,6 +3,9 @@ name = ""
 from random import randint
 def player_name():
     global name
+    print("\n"*10)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("\n"*10)
     name = input("Please enter your name. It may affect your future: ")
     scene1()
 
@@ -285,6 +288,16 @@ def scene6e():
     Do you fight them?""")
     choice = input("Yes or no?: ")
     if choice.lower() == "yes":
+        print("The two of you try to take on the powerful guards, but they are too strong. Several bones cracks in your body as you fade from reality.")
+        print("Game over.")
+        player_name()
+
+    elif choice.lower() == "no":
+        scene7h()
+
+    else:
+        fail_ans()
+        scene6e()
 
 def scene6f():
     global name
@@ -305,10 +318,12 @@ def scene6g():
     global name
     random = randint(0, 1)
     if random == 0:
-        print("""You pick up a penny and throw it next to the robot. The robot bends down, says "Ooh, a penny" and reaches to pick it up.
+        print("""You pick up a penny and throw it next to the robot. The robot notices, says "Ooh, a penny" and reaches to pick it up.
     All the while, you sprint to the vent and slide down.""")
-    elif random == 1:
+        scene7g()
+    else:
         print("You run, expecting it to reach down, but it spots you and shoots you off the roof. Game over")
+        player_name
     
 
 def scene6h():
@@ -320,37 +335,123 @@ def scene6h():
     
 def scene7a():
     global name
-    print("Running, you reach a door.")
+    print("Running, you reach a door. Behind it lies some sort of machine. You already know what it does.")
+    print("Do you leave it on or turn it off?")
+    choice = input("On or off?: ")
+    if choice.lower() == "on":
+        print("A fools choice. The enemy know where you are, and you have just surrendered to them. Game ov-")
+        scene8a()
+    elif choice.lower() == "off":
+        scene8b()
+    else:
+        fail_ans()
+        scene7a()
 
 def scene7b():
     global name
-    print("hi", name, ". this is scene 7b. it's not completed yet")
+    print("A feel for revenge takes over your body as you charge in.")
+    random = randint(0, 3)
+    if random == 3:
+        scene8c()
+    else:
+        print("You took out", random, "of the four robots, but the ones left standing slice through you weak and feeble body with ease")
+        print("Game over")
+        player_name()
 
 def scene7c():
     global name
-    print("hi", name, ". this is scene 7c. it's not completed yet")
-
+    print("""You make an attempt to barter with the AI. You show them mercy and they hold off the whole "taking over the world" thing.""")
+    random = randint(0, 1)
+    if random == 0:
+        print("""The robots accept that they are in the wrong, and set you free, before anything else happens.
+              A portal opens up outside""")
+        scene9a()
+    else:
+        print("The AI would have none of it, and filled the room with a deadly neurotoxin, capable of killing humans with a single breath.")
+        print("Game over.")
+        player_name()
+        
 def scene7d():
     global name
-    print("hi", name, ". this is scene 7d. it's not completed yet")
+    print("""You have no choice but to fight. Charging forwards, you summon the strongest armour you have and the most deadly sword you can think of.
+    The demonforged armour encases your body, and the soul reaper sword enters your hand, and with a flick of your wrist, the sword slices through wires and tubes.
+    The monitor falls onto the ground and lays lifeless like it had been killed. Which it had. A portal opens up at the doorway, and as you walk towards it,
+    you unequip your armour.""")
+    goodending()
 
 def scene7e():
     global name
-    print("You take over the world together, having good times, without any regrets")
+    print("You take over the world together, having good times, without any regrets.")
     print("\n"*20)
     print("Then you get stabbed in the back. The end")
     badending()
 
 def scene7f():
     global name
-    print("hi", name, ". this is scene 7f. it's not completed yet")
+    print("You choose not to help them, but as they said, you had no choice. They obliterate you on the spot, leaving a pile of dust.")
+    print("Game over")
+    player_name()
 
 def scene7g():
     global name
-    print("hi", name, ". this is scene 7g. it's not completed yet")
+    print("""The chute takes you down to a room full of precious treasure, and an exit to the surface.
+    But you are too cool to take the stairway up. You summon the portal to your location. Do you take the treasure or leave it?""")
+    choice = input("Take or leave?: ")
+    if choice.lower() == "take":
+        scene8d()
+    elif choice.lower() == "leave":
+        print("All the evidence was left behind, and the robots were never found out or terminated.")
+        badending()
+
+def scene7h():
+    global name
+    print("""You sneak around the robots, making it past them. You are through the door before they even notice you were there.
+    The next room is filled with water, and your friend fries, electrocuting you in the process. Game over.""")
+    player_name()
+
+
+def scene8a():
+    global name
+    print("""The robots have taken you to their leader. You are told to leave, and not to bother them again.
+    Next time will result in certain death. It doesn't stop you from trying, though, does it. Nothing does.""")
+    goodending()
+
+def scene8b():
+    global name
+    print("""You turn the machine off, hearing the lively buzz of the machine die down.
+    A portal opens up on the other side of the room, where you return home for the final word""")
+    scene9a()
+
+def scene8c():
+    global name
+    print("""You destroy all four robots, before moving on into the next corridor. There are two doors. The left and the right.""")
+    choice = input("Left or right?: ")
+    if choice.lower() == "left":
+        scene6c()
+    elif choice.lower() == "right":
+        scene6d()
+    else:
+        fail_ans()
+        scene8c()
+
+def scene8d():
+    global name
+    print("""You keep the portal open while you carry every last piece of the treasure into your house.
+    Summoning the agency, they pin the robots down for theft and save the world.""")
+    goodending()
+
+def scene9a():
+    global name
+    print("Congratulations", name, """!, is the first thing you hear as you pass through the doorway.
+    You had saved the world, and humankind were now free to live however they pleased,
+    without the imposing reign of the dreaded bots. You knew full well what would be happening next.
+    You were going to be reinstated as an agent, but first, you had a party to show up to...""")
+    goodending()
+
 
 def goodending():
     global name
+    print("\n"*5)
     print("Congratulation", name, "! You have completed one of many endings. Would you like to try and get them?")
     answer = input("Yes or no?: ")
     if answer.lower() == "yes":
@@ -360,6 +461,7 @@ def goodending():
 
 def badending():
     global name
+    print("\n"*5)
     print("Sucks to be you. You failed. Unlucky.")
     print("\n"*10)
     print("But this is an ending, so we'll call it the bad one.")
