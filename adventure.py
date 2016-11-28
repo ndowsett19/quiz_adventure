@@ -243,9 +243,9 @@ def scene6c():
     elif name.lower() == "noah":
         print("You are faced with an AI, clearly controlling the robots. Do you barter or fight?")
         choice = input("Barter or fight?: ")
-        if choice.lower == "barter":
+        if choice.lower() == "barter":
             scene7c()
-        elif choice.lower == "fight":
+        elif choice.lower() == "fight":
             scene7d()
         else:
             fail_ans()
@@ -452,7 +452,7 @@ def scene9a():
 def goodending():
     global name
     print("\n"*5)
-    print("Congratulation", name, "! You have completed one of many endings. Would you like to try and get them?")
+    print("Congratulations", name, "! You have completed one of many endings. Would you like to try and get them?")
     answer = input("Yes or no?: ")
     if answer.lower() == "yes":
         player_name()
